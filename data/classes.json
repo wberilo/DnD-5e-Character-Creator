@@ -1,16 +1,7 @@
 {
   "Barbarian": {
     "hitdie":12,
-    "level":{
-
-    },
-    "armor":["light_armor","medium_armor","shields"],
-    "weaponprof":["simple_weapons","martial_weapons"],
-    "savingthrows":["strength","constitution"],
-    "startingskills":2
-  },
-  "Bard": {
-    "hitdie":8,
+    "smalldie":7,
     "level":{
       "1":{
         "spellslots":[2]
@@ -73,12 +64,153 @@
         "spellslots":[4,3,3,3,3,2,2,1,1]
       }
     },
-    "armor":["light_armor"],
+    "cantrips":[],
+    "proficiencybonus":[],
+    "armorprof":["light_armor","medium_armor","shields"],
+    "weaponprof":["simple_weapons","martial_weapons"],
+    "savingthrows":["strength","constitution"],
+    "startingskills":2
+  },
+  "Bard": {
+    "hitdie":8,
+    "smalldie":5,
+    "level":{
+      "1":{
+        "spellslots":[2]
+      },
+      "2":{
+        "spellslots":[3]
+      },
+      "3":{
+        "spellslots":[4,2]
+      },
+      "4":{
+        "spellslots":[4,3]
+      },
+      "5":{
+        "spellslots":[4,3,2]
+      },
+      "6":{
+        "spellslots":[4,3,3]
+      },
+      "7":{
+        "spellslots":[4,3,3,1]
+      },
+      "8":{
+        "spellslots":[4,3,3,2]
+      },
+      "9":{
+        "spellslots":[4,3,3,3,1]
+      },
+      "10":{
+        "spellslots":[4,3,3,3,2]
+      },
+      "11":{
+        "spellslots":[4,3,3,3,2,1]
+      },
+      "12":{
+        "spellslots":[4,3,3,3,2,1]
+      },
+      "13":{
+        "spellslots":[4,3,3,3,2,1,1]
+      },
+      "14":{
+        "spellslots":[4,3,3,3,2,1,1]	
+      },
+      "15":{
+        "spellslots":[4,3,3,3,2,1,1,1]
+      },
+      "16":{
+        "spellslots":[4,3,3,3,2,1,1,1]
+      },
+      "17":{
+        "spellslots":[4,3,3,3,2,1,1,1,1]
+      },
+      "18":{
+        "spellslots":[4,3,3,3,3,1,1,1,1]
+      },
+      "19":{
+        "spellslots":[4,3,3,3,3,2,1,1,1]
+      },
+      "20":{
+        "spellslots":[4,3,3,3,3,2,2,1,1]
+      }
+    },
+    "armorprof":["light_armor"],
     "weaponprof":["simple_weapons","hand_crossbows","longswords","rapiers","shortswords"],
     "savingthrows":["dexterity","charisma"],
     "startingskills":3
   },
-  "Cleric": {},
+  "Cleric": {
+    "hitdie":8,
+    "smalldie":5,
+    "level":{
+      "1":{
+        "spellslots":[2]
+      },
+      "2":{
+        "spellslots":[3]
+      },
+      "3":{
+        "spellslots":[4,2]
+      },
+      "4":{
+        "spellslots":[4,3]
+      },
+      "5":{
+        "spellslots":[4,3,2]
+      },
+      "6":{
+        "spellslots":[4,3,3]
+      },
+      "7":{
+        "spellslots":[4,3,3,1]
+      },
+      "8":{
+        "spellslots":[4,3,3,2]
+      },
+      "9":{
+        "spellslots":[4,3,3,3,1]
+      },
+      "10":{
+        "spellslots":[4,3,3,3,2]
+      },
+      "11":{
+        "spellslots":[4,3,3,3,2,1]
+      },
+      "12":{
+        "spellslots":[4,3,3,3,2,1]
+      },
+      "13":{
+        "spellslots":[4,3,3,3,2,1,1]
+      },
+      "14":{
+        "spellslots":[4,3,3,3,2,1,1]	
+      },
+      "15":{
+        "spellslots":[4,3,3,3,2,1,1,1]
+      },
+      "16":{
+        "spellslots":[4,3,3,3,2,1,1,1]
+      },
+      "17":{
+        "spellslots":[4,3,3,3,2,1,1,1,1]
+      },
+      "18":{
+        "spellslots":[4,3,3,3,3,1,1,1,1]
+      },
+      "19":{
+        "spellslots":[4,3,3,3,3,2,1,1,1]
+      },
+      "20":{
+        "spellslots":[4,3,3,3,3,2,2,1,1]
+      }
+    },
+    "armorprof":["light_armor","medium_armor","shields"],
+    "weaponprof":["simple_weapons"],
+    "savingthrows":["wisdom","charisma"],
+    "startingskills":2
+  },
   "Druid": {},
   "Fighter": {},
   "Monk": {},
