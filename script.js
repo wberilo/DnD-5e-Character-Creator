@@ -1,278 +1,356 @@
 let classes;
 let proficiencyBonus = 2;
 let level = 1;
-//attributes and ability scores according to 5e rules
-let strength = {
+//attributes and ability scores are calculated according to 5e rules
+let attributes = {
+strength : {
   value:0,
   bonus:0,
-  set changeValue(value){
+  set setValue(value){
     this.value = value;
     this.bonus = Math.floor((value-10)/2);
     document.querySelector('#strength-bonus').innerText = this.bonus;
+    skills.athletics.setValue();
+    console.log('aaa')
   }
-};
-let dexterity = {
+},
+ dexterity : {
   value:0,
   bonus:-5,
-  set changeValue(value){
+  set setValue(value){
     this.value = value;
     this.bonus = Math.floor((value-10)/2);
     document.querySelector('#dexterity-bonus').innerText = this.bonus;
+    skills.acrobatics.setValue();
+    skills.sleightofhand.setValue();
+    skills.stealth.setValue();
   }
-};
-let constitution = {
+},
+ constitution : {
   value:0,
   bonus:-5,
-  set changeValue(value){
+  set setValue(value){
     this.value = value;
     this.bonus = Math.floor((value-10)/2);
     document.querySelector('#constitution-bonus').innerText = this.bonus;
   }
-};
-let intelligence = {
+},
+ intelligence : {
   value:0,
   bonus:-5,
-  set changeValue(value){
+  set setValue(value){
     this.value = value;
     this.bonus = Math.floor((value-10)/2);
     document.querySelector('#intelligence-bonus').innerText = this.bonus;
+    skills.arcana.setValue();
+    skills.history.setValue();
+    skills.investigation.setValue();
+    skills.nature.setValue();
+    skills.religion.setValue();
   }
-};
-let wisdom = {
+},
+ wisdom : {
   value:0,
   bonus:-5,
-  set changeValue(value){
+  set setValue(value){
     this.value = value;
     this.bonus = Math.floor((value-10)/2);
     document.querySelector('#wisdom-bonus').innerText = this.bonus;
+    skills.animalhandling.setValue();
+    skills.insight.setValue();
+    skills.medicine.setValue();
+    skills.perception.setValue();
+    skills.survival.setValue();
   }
-};
-let charisma = {
+},
+ charisma : {
   value:0,
   bonus:-5,
-  set changeValue(value){
+  set setValue(value){
     this.value = value;
     this.bonus = Math.floor((value-10)/2);
     document.querySelector('#charisma-bonus').innerText = this.bonus;
+    skills.deception.setValue();
+    skills.intimidation.setValue();
+    skills.performance.setValue();
+    skills.persuasion.setValue();
   }
-};
-//skills
-let acrobatics = {
+
+},
+}
+//skills are calculated according to 5e rules
+let skills = {
+ acrobatics : {
   proficiency:false,
   otherModifiers:0,
   get getValue(){
     if(this.proficiency===true){
-      return dexterity.bonus + proficiencyBonus + this.otherModifiers;
+      return attributes.dexterity.bonus + proficiencyBonus + this.otherModifiers;
     }
     else{
-      return dexterity.bonus + this.otherModifiers;
+      return attributes.dexterity.bonus + this.otherModifiers;
     }
+  },
+  setValue(){
+    document.querySelector('#acrobatics').innerText = this.getValue
   }
-};
-let animalhandling = {
+},
+ animalhandling : {
   proficiency:false,
   otherModifiers:0,
   get getValue(){
     if(this.proficiency===true){
-      return wisdom.bonus + proficiencyBonus + this.otherModifiers;
+      return attributes.wisdom.bonus + proficiencyBonus + this.otherModifiers;
     }
     else{
-      return wisdom.bonus + this.otherModifiers;
+      return attributes.wisdom.bonus + this.otherModifiers;
     }
+  },
+  setValue(){
+    document.querySelector('#animalhandling').innerText = this.getValue
   }
-};
-let arcana = {
+},
+ arcana : {
   proficiency:false,
   otherModifiers:0,
   get getValue(){
     if(this.proficiency===true){
-      return intelligence.bonus + proficiencyBonus + this.otherModifiers;
+      return attributes.intelligence.bonus + proficiencyBonus + this.otherModifiers;
     }
     else{
-      return intelligence.bonus + this.otherModifiers;
+      return attributes.intelligence.bonus + this.otherModifiers;
     }
+  },
+  setValue(){
+    document.querySelector('#arcana').innerText = this.getValue
   }
-};
-let athletics = {
+},
+ athletics : {
   proficiency:false,
   otherModifiers:0,
   get getValue(){
     if(this.proficiency===true){
-      return strength.bonus + proficiencyBonus + this.otherModifiers;
+      return attributes.strength.bonus + proficiencyBonus + this.otherModifiers;
     }
     else{
-      return strength.bonus + this.otherModifiers;
+      return attributes.strength.bonus + this.otherModifiers;
     }
+  },
+  setValue(){
+    document.querySelector('#athletics').innerText = this.getValue
   }
-};
-let deception = {
+},
+ deception : {
   proficiency:false,
   otherModifiers:0,
   get getValue(){
     if(this.proficiency===true){
-      return charisma.bonus + proficiencyBonus + this.otherModifiers;
+      return attributes.charisma.bonus + proficiencyBonus + this.otherModifiers;
     }
     else{
-      return charisma.bonus + this.otherModifiers;
+      return attributes.charisma.bonus + this.otherModifiers;
     }
+  },
+  setValue(){
+    document.querySelector('#deception').innerText = this.getValue
   }
-};
-let history = {
+},
+ history : {
   proficiency:false,
   otherModifiers:0,
   get getValue(){
     if(this.proficiency===true){
-      return intelligence.bonus + proficiencyBonus + this.otherModifiers;
+      return attributes.intelligence.bonus + proficiencyBonus + this.otherModifiers;
     }
     else{
-      return intelligence.bonus + this.otherModifiers;
+      return attributes.intelligence.bonus + this.otherModifiers;
     }
+  },
+  setValue(){
+    document.querySelector('#history').innerText = this.getValue
   }
-};
-let insight = {
+},
+ insight : {
   proficiency:false,
   otherModifiers:0,
   get getValue(){
     if(this.proficiency===true){
-      return wisdom.bonus + proficiencyBonus + this.otherModifiers;
+      return attributes.wisdom.bonus + proficiencyBonus + this.otherModifiers;
     }
     else{
-      return wisdom.bonus + this.otherModifiers;
+      return attributes.wisdom.bonus + this.otherModifiers;
     }
+  },
+  setValue(){
+    document.querySelector('#insight').innerText = this.getValue
   }
-};
-let intimidation = {
+},
+ intimidation : {
   proficiency:false,
   otherModifiers:0,
   get getValue(){
     if(this.proficiency===true){
-      return charisma.bonus + proficiencyBonus + this.otherModifiers;
+      return attributes.charisma.bonus + proficiencyBonus + this.otherModifiers;
     }
     else{
-      return charisma.bonus + this.otherModifiers;
+      return attributes.charisma.bonus + this.otherModifiers;
     }
+  },
+  setValue(){
+    document.querySelector('#intimidation').innerText = this.getValue
   }
-};
-let investigation = {
+},
+ investigation : {
   proficiency:false,
   otherModifiers:0,
   get getValue(){
     if(this.proficiency===true){
-      return intelligence.bonus + proficiencyBonus + this.otherModifiers;
+      return attributes.intelligence.bonus + proficiencyBonus + this.otherModifiers;
     }
     else{
-      return intelligence.bonus + this.otherModifiers;
+      return attributes.intelligence.bonus + this.otherModifiers;
     }
+  },
+  setValue(){
+    document.querySelector('#investigation').innerText = this.getValue
   }
-};
-let medicine = {
+},
+ medicine : {
   proficiency:false,
   otherModifiers:0,
   get getValue(){
     if(this.proficiency===true){
-      return wisdom.bonus + proficiencyBonus + this.otherModifiers;
+      return attributes.wisdom.bonus + proficiencyBonus + this.otherModifiers;
     }
     else{
-      return wisdom.bonus + this.otherModifiers;
+      return attributes.wisdom.bonus + this.otherModifiers;
     }
+  },
+  setValue(){
+    document.querySelector('#medicine').innerText = this.getValue
   }
-};
-let nature = {
+},
+ nature : {
   proficiency:false,
   otherModifiers:0,
   get getValue(){
     if(this.proficiency===true){
-      return intelligence.bonus + proficiencyBonus + this.otherModifiers;
+      return attributes.intelligence.bonus + proficiencyBonus + this.otherModifiers;
     }
     else{
-      return intelligence.bonus + this.otherModifiers;
+      return attributes.intelligence.bonus + this.otherModifiers;
     }
+  },
+  setValue(){
+    document.querySelector('#nature').innerText = this.getValue
   }
-};
-let perception = {
+},
+ perception : {
   proficiency:false,
   otherModifiers:0,
   get getValue(){
     if(this.proficiency===true){
-      return wisdom.bonus + proficiencyBonus + this.otherModifiers;
+      return attributes.wisdom.bonus + proficiencyBonus + this.otherModifiers;
     }
     else{
-      return wisdom.bonus + this.otherModifiers;
+      return attributes.wisdom.bonus + this.otherModifiers;
     }
+  },
+  setValue(){
+    document.querySelector('#perception').innerText = this.getValue
   }
-};
-let performance = {
+},
+ performance : {
   proficiency:false,
   otherModifiers:0,
   get getValue(){
     if(this.proficiency===true){
-      return charisma.bonus + proficiencyBonus + this.otherModifiers;
+      return attributes.charisma.bonus + proficiencyBonus + this.otherModifiers;
     }
     else{
-      return charisma.bonus + this.otherModifiers;
+      return attributes.charisma.bonus + this.otherModifiers;
     }
+  },
+  setValue(){
+    document.querySelector('#performance').innerText = this.getValue
   }
-};
-let persuasion = {
+},
+ persuasion : {
   proficiency:false,
   otherModifiers:0,
   get getValue(){
     if(this.proficiency===true){
-      return charisma.bonus + proficiencyBonus + this.otherModifiers;
+      return attributes.charisma.bonus + proficiencyBonus + this.otherModifiers;
     }
     else{
-      return charisma.bonus + this.otherModifiers;
+      return attributes.charisma.bonus + this.otherModifiers;
     }
+  },
+  setValue(){
+    document.querySelector('#persuasion').innerText = this.getValue
   }
-};
-let religion = {
+},
+ religion : {
   proficiency:false,
   otherModifiers:0,
   get getValue(){
     if(this.proficiency===true){
-      return intelligence.bonus + proficiencyBonus + this.otherModifiers;
+      return attributes.intelligence.bonus + proficiencyBonus + this.otherModifiers;
     }
     else{
-      return intelligence.bonus + this.otherModifiers;
+      return attributes.intelligence.bonus + this.otherModifiers;
     }
+  },
+  setValue(){
+    document.querySelector('#religion').innerText = this.getValue
   }
-};
-let sleightofhand = {
+},
+ sleightofhand : {
   proficiency:false,
   otherModifiers:0,
   get getValue(){
     if(this.proficiency===true){
-      return dexterity.bonus + proficiencyBonus + this.otherModifiers;
+      return attributes.dexterity.bonus + proficiencyBonus + this.otherModifiers;
     }
     else{
-      return dexterity.bonus + this.otherModifiers;
+      return attributes.dexterity.bonus + this.otherModifiers;
     }
+  },
+  setValue(){
+    document.querySelector('#sleightofhand').innerText = this.getValue
   }
-};
-let stealth = {
+},
+ stealth : {
   proficiency:false,
   otherModifiers:0,
   get getValue(){
     if(this.proficiency===true){
-      return dexterity.bonus + proficiencyBonus + this.otherModifiers;
+      return attributes.dexterity.bonus + proficiencyBonus + this.otherModifiers;
     }
     else{
-      return dexterity.bonus + this.otherModifiers;
+      return attributes.dexterity.bonus + this.otherModifiers;
     }
+  },
+  setValue(){
+    document.querySelector('#stealth').innerText = this.getValue
   }
-};
-let survival = {
+},
+ survival : {
   proficiency:false,
   otherModifiers:0,
   get getValue(){
     if(this.proficiency===true){
-      return wisdom.bonus + proficiencyBonus + this.otherModifiers;
+      return attributes.wisdom.bonus + proficiencyBonus + this.otherModifiers;
     }
     else{
-      return wisdom.bonus + this.otherModifiers;
+      return attributes.wisdom.bonus + this.otherModifiers;
     }
+  },
+  setValue(){
+    document.querySelector('#survival').innerText = this.getValue
   }
-};
+},
+}
 
 //classes are loaded from the classes.json data file, function can receive a similar json file as input
 function goLoadClasses(url) {
@@ -295,31 +373,15 @@ function populate(classesgot) {
     opt.innerText = classnames[i];
     document.querySelector('#class-select').appendChild(opt);
   }
-  //console.log(eval('classes'));
 }
 
-document.querySelector('#strength').addEventListener('input',function(){
-  strength.changeValue = document.querySelector('#strength').value
-})
+const attrInput = document.querySelectorAll('.attributes input');
+for (let i = 0; i < attrInput.length; i++) {
+  attrInput[i].addEventListener('input', function(){
+    attributes[attrInput[i].id].setValue = parseInt(attrInput[i].value);
+  })
+}
 
-document.querySelector('#dexterity').addEventListener('input',function(){
-  dexterity.changeValue = document.querySelector('#dexterity').value
-})
+const skillsProficiencies = document.querySelectorAll('.skills p input')
 
-document.querySelector('#constitution').addEventListener('input',function(){
-  constitution.changeValue = document.querySelector('#constitution').value
-})
-
-document.querySelector('#intelligence').addEventListener('input',function(){
-  intelligence.changeValue = document.querySelector('#intelligence').value
-})
-
-document.querySelector('#wisdom').addEventListener('input',function(){
-  wisdom.changeValue = document.querySelector('#wisdom').value
-})
-
-document.querySelector('#charisma').addEventListener('input',function(){
-  charisma.changeValue = document.querySelector('#charisma').value
-})
-
-console.log(acrobatics.getValue)
+console.log(attributes['charisma'])
