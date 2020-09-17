@@ -383,5 +383,9 @@ for (let i = 0; i < attrInput.length; i++) {
 }
 
 const skillsProficiencies = document.querySelectorAll('.skills p input')
-
-console.log(attributes['charisma'])
+for (let i = 0; i < skillsProficiencies.length; i++) {
+  skillsProficiencies[i].addEventListener('input', function(){
+    skills[skillsProficiencies[i].id.replace('bool-','')].proficiency = !skills[skillsProficiencies[i].id.replace('bool-','')].proficiency
+    skills[skillsProficiencies[i].id.replace('bool-','')].setValue();
+  })
+}
