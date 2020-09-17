@@ -7,29 +7,79 @@
     <link rel="stylesheet" href="style.css"></link>
   </head>
   <body>
-    <input id="strength" type="number">
-    <input id="dexterity" type="number">
-    <input id="constitution" type="number">
-    <input id="intelligence" type="number">
-    <input id="wisdom" type="number">
-    <input id="charisma" type="number">
+    <input id="name" type="text">
+    <div class="topbar">
+      <select name="class" id="class-select">
+        <option value="" disabled selected hidden>Select Class</option>
+        <!-- 
+        <option value="barbarian">Barbarian</option>
+        <option value="bard">Bard</option>
+        <option value="cleric">Cleric</option>
+        <option value="druid">Druid</option>
+        <option value="fighter">Fighter</option>
+        <option value="monk">Monk</option>
+        <option value="paladin">Paladin</option>
+        <option value="ranger">Ranger</option>
+        <option value="rogue">Rogue</option>
+        <option value="sorcerer">Sorcerer</option>
+        <option value="warlock">Warlock</option>
+        <option value="wizard">Wizard</option>
+        <option value="artificer">Artificer</option>
+        -->
+      </select>
+    </div>
 
-    <select name="class" id="class-select">
-      <option value="barbarian">Barbarian</option>
-      <option value="bard">Bard</option>
-      <option value="cleric">Cleric</option>
-      <option value="druid">Druid</option>
-      <option value="fighter">Fighter</option>
-      <option value="monk">Monk</option>
-      <option value="paladin">Paladin</option>
-      <option value="ranger">Ranger</option>
-      <option value="rogue">Rogue</option>
-      <option value="sorcerer">Sorcerer</option>
-      <option value="warlock">Warlock</option>
-      <option value="wizard">Wizard</option>
-      <option value="artificer">Artificer</option>
-    </select>
+    <div class="attributes">
+      <p class="attribute-text">Strength</p><input id="strength" type="number"> <br>
+      <p class="attribute-text">Dexterity</p><input id="dexterity" type="number"> <br>
+      <p class="attribute-text">Constitution</p><input id="constitution" type="number"> <br>
+      <p class="attribute-text">Intelligence</p><input id="intelligence" type="number"> <br>
+      <p class="attribute-text">Wisdom</p><input id="wisdom" type="number"> <br>
+      <p class="attribute-text">Charisma</p><input id="charisma" type="number"> <br>
+    </div>
 
+    <div class="skills">
+      <p>
+        Acrobatics (Dex) <span id="acrobatics"></span><br>
+        Animal Handling (Wis) <span id="animalhandling"></span><br>
+        Arcana (Int) <span id="arcana"></span><br>
+        Athletics (Str) <span id="athletics"></span><br>
+        Deception (Cha) <span id="deception"></span><br>
+        History (Int) <span id="history"></span><br>
+        Insight (Wis) <span id="insight"></span><br>
+        Intimidation (Cha) <span id="intimidation"></span><br>
+        Investigation (Int) <span id="investigation"></span><br>
+        Medicine (Wis) <span id="medicine"></span><br>
+        Nature (Int) <span id="nature"></span><br>
+        Perception (Wis) <span id="perception"></span><br>
+        Performance (Cha) <span id="performance"></span><br>
+        Persuasion (Cha) <span id="persuasion"></span><br>
+        Religion (Int) <span id="religion"></span><br>
+        Sleight of Hand (Dex) <span id="sleightofhand"></span><br>
+        Stealth (Dex) <span id="stealth"></span><br>
+        Survival (Wis) <span id="survival"></span><br>
+      </p>
+    </div>
+<!-- 
+Acrobatics (Dex)
+Animal Handling (Wis)
+Arcana (Int)
+Athletics (Str)
+Deception (Cha)
+History (Int)
+Insight (Wis)
+Intimidation (Cha)
+Investigation (Int)
+Medicine (Wis)
+Nature (Int)
+Perception (Wis)
+Performance (Cha)
+Persuasion (Cha)
+Religion (Int)
+Sleight of Hand (Dex)
+Stealth (Dex)
+Survival (Wis) 
+-->
     <script src="script.js"></script>
   </body>
 </html>
