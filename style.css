@@ -1,11 +1,16 @@
+body {
+  background-color: RGB(26,27,38);
+  color: aliceblue;
+}
+
 .attribute-text {
   text-transform: uppercase;
   font-family: sans-serif;
   font-weight: 500;
 }
 
-.attributes {
-  display: inline-block;
+.numeric {
+  display: flex;
 }
 
 .skills {
